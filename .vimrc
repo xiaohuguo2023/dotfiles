@@ -39,6 +39,8 @@ Plugin 'windwp/nvim-autopairs'
 
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'skywind3000/gutentags_plus'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 " Track the engine.
 "iPlugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
@@ -64,6 +66,8 @@ au BufNewFile, BufRead *.py
     \ set expandtab
     \ set autoindent
     \ set fileformat=unix
+
+autocmd FileType python setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 "For full stack development,
 au BufNewFile, BufRead *.js,*.html,*.css
