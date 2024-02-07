@@ -41,6 +41,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'skywind3000/gutentags_plus'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
+set rtp+=/usr/bin/fzf
 " Track the engine.
 "iPlugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
