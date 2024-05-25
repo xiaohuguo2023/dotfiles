@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt install universal-ctags
+sudo apt install global
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
