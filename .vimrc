@@ -51,6 +51,13 @@ set rtp+=/usr/bin/fzf
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+if has('gui_running')
+  set background=dark
+  colorscheme solarized
+else
+  colorscheme zenburn
+endif
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
