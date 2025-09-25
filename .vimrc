@@ -22,7 +22,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
 "Syntax Checking/Highlighting
 Plugin 'vim-syntastic/syntastic'
-" add PEP 8 checking
+"add PEP 8 checking
 Plugin 'nvie/vim-flake8'
 " Color Schemes
 Plugin 'jnurmine/Zenburn'
@@ -42,12 +42,12 @@ Plugin 'skywind3000/gutentags_plus'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 set rtp+=/usr/bin/fzf
-" Track the engine.
+"Track the engine.
 "iPlugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 "Plugin 'honza/vim-snippets'
 
-" All of your Plugins must be added before the following line
+"All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -58,7 +58,7 @@ else
   colorscheme zenburn
 endif
 
-" Enable folding
+"Enable folding
 set foldmethod=indent
 set foldlevel=99
 
