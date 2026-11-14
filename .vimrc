@@ -51,13 +51,6 @@ set rtp+=/usr/bin/fzf
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-if has('gui_running')
-  set background=dark
-  colorscheme solarized
-else
-  colorscheme zenburn
-endif
-
 "Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -106,11 +99,13 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let python_highlight_all=1
 syntax on
 
+" silent! so the first run does not fail: dotinit.sh starts vim to install
+" the plugins, and Zenburn and solarized are not on the runtimepath yet.
 if has('gui_running')
   set background=dark
-    colorscheme solarized
-  else
-    colorscheme zenburn
+  silent! colorscheme solarized
+else
+  silent! colorscheme zenburn
 endif
 
 set clipboard=unnamedplus
