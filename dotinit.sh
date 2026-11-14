@@ -47,7 +47,15 @@ else
   cd ~/.vim/bundle/YouCompleteMe
   git submodule update --init --recursive
 fi
-python3 install.py --clangd-completer
+# YouCompleteMe builds a native module and has to link against libpython, so
+# it needs a Python built with --enable-shared. A hand-built python3 under
+# /usr/local is often static and comes first on PATH. Prefer the distribution
+# python3, which matches the python3-devel package installed above.
+YCM_PYTHON=python3
+if [ -x /usr/bin/python3 ]; then
+    YCM_PYTHON=/usr/bin/python3
+fi
+"$YCM_PYTHON" install.py --clangd-completer
 cd ~
 
 # Clean and clone Tmux Plugin Manager
