@@ -66,6 +66,14 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install tmux plugins and source config
 ~/.tmux/plugins/tpm/bin/install_plugins
-tmux source ~/.tmux.conf
+
+# Reload only when a tmux server is already running. With no server,
+# "tmux source" fails with "no server running", and set -e would stop the
+# script one line before the end. A new tmux reads the file at start anyway.
+if tmux list-sessions >/dev/null 2>&1; then
+    tmux source ~/.tmux.conf
+else
+    echo "No tmux server running. The config applies when you next start tmux."
+fi
 
 echo "✅ Setup complete!"
