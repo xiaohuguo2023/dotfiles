@@ -7,17 +7,8 @@ set -e
 #sudo apt update
 sudo apt install -y universal-ctags global cmake
 
-# YouCompleteMe requires latest vim
-git clone https://github.com/vim/vim.git
-cd vim/
-./configure --with-features=huge \
-            --enable-multibyte \
-            --enable-python3interp=yes \
-            --enable-cscope \
-            --prefix=/usr/local
-make -j$(nproc)
-sudo make install
-cd ..
+# The distribution vim is new enough now, so there is no source build here.
+# Build vim from source only if YouCompleteMe reports that vim is too old.
 
 # Copy .vimrc and .tmux.conf if they exist in the script's directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
